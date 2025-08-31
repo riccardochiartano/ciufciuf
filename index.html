@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <title>Interrail Planner</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.5/dist/leaflet.css"
+    integrity="sha256-sA+4oY4ZG8zXv2tk6g4Gb7W9b8Dp7i2aZ6z+3Bx5jz0="
+    crossorigin=""/>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.5/dist/leaflet.js"
+    integrity="sha256-IwZc6XoYwYgZLzZNJm3rgz4aucrXk4Gvn6lTQgtJr7M="
+    crossorigin=""></script>
 </head>
 <body>
-    <nav class="navbar">
+  <nav class="navbar">
     <ul>
       <li><a href="index.html">🏠 Home</a></li>
       <li><a href="meteo.html">🌤 Meteo</a></li>
@@ -18,7 +26,6 @@
   
   <header>
     <h1>🚆 Interrail Planner</h1>
-    <p>Benvenuto! Qui puoi organizzare il tuo viaggio.</p>
   </header>
 
   <main>
@@ -26,9 +33,47 @@
       <ul>
         <li><a href="meteo.html">🌤 Meteo tappe</a></li>
         <li><a href="#">💰 Budget (in arrivo)</a></li>
-        <li><a href="#">🗺 Itinerario (in arrivo)</a></li>
+        <li><a href="itinerario.html">🗺 Itinerario</a></li>
       </ul>
     </nav>
+
+    <h2 style="text-align:center; margin-top:30px;">Mappa del viaggio</h2>
+    <div id="map" style="height:500px; max-width:900px; margin: 0 auto; border:1px solid #ccc;"></div>
+
+    <script>
+      // Inizializza la mappa centrata sull'Europa
+      const map = L.map('map').setView([48.5, 9], 5);
+
+      // Aggiunge OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      // Lista delle città con lat/lon e nome
+      const cities = [
+        {name: "Turin", lat: 45.07, lon: 7.69},
+        {name: "Bern", lat: 46.95, lon: 7.44},
+        {name: "Lauterbrunnen", lat: 46.63, lon: 7.92},
+        {name: "Lucern", lat: 47.05, lon: 8.31},
+        {name: "Heidelberg", lat: 49.41, lon: 8.71},
+        {name: "Strasbourg", lat: 48.58, lon: 7.75},
+        {name: "Paris", lat: 48.86, lon: 2.35},
+        {name: "Lille", lat: 50.63, lon: 3.06},
+        {name: "Bruges", lat: 51.21, lon: 3.22},
+        {name: "Bruxelles", lat: 50.85, lon: 4.35}
+      ];
+
+      // Aggiunge i marker
+      cities.forEach(city => {
+        L.marker([city.lat, city.lon]).addTo(map)
+          .bindPopup(city.name);
+      });
+
+      // Disegna polilinea del percorso
+      const latlngs = cities.map(c => [c.lat, c.lon]);
+      L.polyline(latlngs, {color: 'blue'}).addTo(map);
+    </script>
   </main>
 </body>
 </html>
