@@ -27,51 +27,38 @@
     <div id="map" style="height:500px; max-width:900px; margin: 0 auto; border:1px solid #ccc;"></div>
 
     <script>
-      // Inizializza la mappa
-      const map = L.map('map');
-    
-      // OpenStreetMap tiles
+      // Inizializza la mappa centrata sull'Europa
+      const map = L.map('map').setView([48.5, 9], 5);
+
+      // Aggiunge OpenStreetMap tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap'
       }).addTo(map);
-    
-      // Lista delle città con dettagli
+
+      // Lista delle città con lat/lon e nome
       const cities = [
-        {name: "Turin", lat: 45.07, lon: 7.69, dates: "15 Set", activities: "Partenza Interrail"},
-        {name: "Bern", lat: 46.95, lon: 7.44, dates: "15-17 Set", activities: "Passeggiata centro storico"},
-        {name: "Lauterbrunnen", lat: 46.63, lon: 7.92, dates: "17-19 Set", activities: "Hikehike"},
-        {name: "Lucern", lat: 47.05, lon: 8.31, dates: "19 Set", activities: "Visita città"},
-        {name: "Heidelberg", lat: 49.41, lon: 8.71, dates: "19-21 Set", activities: "Truztrutz"},
-        {name: "Strasbourg", lat: 48.58, lon: 7.75, dates: "21-22 Set", activities: "Camping o Truztrutz"},
-        {name: "Paris", lat: 48.86, lon: 2.35, dates: "22-25 Set", activities: "Visita città"},
-        {name: "Lille", lat: 50.63, lon: 3.06, dates: "25 Set", activities: "Viaggio"},
-        {name: "Bruges", lat: 51.21, lon: 3.22, dates: "25-27 Set", activities: "Passeggiate"},
-        {name: "Bruxelles", lat: 50.85, lon: 4.35, dates: "27 Set", activities: "Ritorno"}
+        {name: "Turin", lat: 45.07, lon: 7.69},
+        {name: "Bern", lat: 46.95, lon: 7.44},
+        {name: "Lauterbrunnen", lat: 46.63, lon: 7.92},
+        {name: "Lucern", lat: 47.05, lon: 8.31},
+        {name: "Heidelberg", lat: 49.41, lon: 8.71},
+        {name: "Strasbourg", lat: 48.58, lon: 7.75},
+        {name: "Paris", lat: 48.86, lon: 2.35},
+        {name: "Lille", lat: 50.63, lon: 3.06},
+        {name: "Bruges", lat: 51.21, lon: 3.22},
+        {name: "Bruxelles", lat: 50.85, lon: 4.35}
       ];
-    
-      // Icona personalizzata
-      const trainIcon = L.icon({
-        iconUrl: 'https://cdn-icons-png.flaticon.com/512/61/61231.png', // icona treno
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -32]
-      });
-    
-      // Aggiunge marker con popup dettagliato
-      const latlngs = [];
+
+      // Aggiunge i marker
       cities.forEach(city => {
-        latlngs.push([city.lat, city.lon]);
-        L.marker([city.lat, city.lon], {icon: trainIcon})
-          .addTo(map)
-          .bindPopup(`<b>${city.name}</b><br>${city.dates}<br>${city.activities}`);
+        L.marker([city.lat, city.lon]).addTo(map)
+          .bindPopup(city.name);
       });
-    
-      // Disegna percorso
+
+      // Disegna polilinea del percorso
+      const latlngs = cities.map(c => [c.lat, c.lon]);
       L.polyline(latlngs, {color: 'blue'}).addTo(map);
-    
-      // Adatta zoom ai marker
-      map.fitBounds(latlngs);
     </script>
   </main>
 </body>
