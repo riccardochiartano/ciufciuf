@@ -4,6 +4,30 @@
   <meta charset="UTF-8">
   <title>Interrail Planner - Itinerario</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #0077cc;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .note {
+      text-align: left;
+      font-size: 0.9em;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -21,6 +45,156 @@
     <h1>🗺 Itinerario Interrail</h1>
   </header>
 
-  <p>Qui potrai aggiungere la lista delle tappe con date e mezzi di trasporto.</p>
+  <table>
+    <tr>
+      <th>Giorno</th>
+      <th>Tratta</th>
+      <th>Partenza</th>
+      <th>Arrivo</th>
+      <th>Mezzo</th>
+      <th>Link</th>
+    </tr>
+
+    <tr>
+      <td>15</td>
+      <td>Turin → Bern</td>
+      <td>18:20</td>
+      <td>23:15</td>
+      <td>Flixbus</td>
+      <td><a href="#">link</a></td>
+    </tr>
+    <tr><td colspan="6" class="note">🌍 Pernottamento a Berna — Trustroots: <a href="https://www.trustroots.org/profile/rubruk">rubruk</a></td></tr>
+
+    <tr>
+      <td>16</td>
+      <td>Bern</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr><td colspan="6" class="note">🏛 Attività: visita città</td></tr>
+
+    <tr>
+      <td>17</td>
+      <td>Bern → Lauterbrunnen</td>
+      <td>11:04</td>
+      <td>12:35</td>
+      <td>Train</td>
+      <td><a href="https://maps.app.goo.gl/WAHf8vfsczfShMhn7">link</a></td>
+    </tr>
+    <tr><td colspan="6" class="note">🚗 Blablacar possibile: <a href="https://www.blablacar.it/search?fn=Berna%2C%20Svizzera&tn=Lauterbrunnen%2C%20Svizzera&db=2025-08-15&seats=2&search_origin=SEARCH&from_place_id=eyJpIjoiQ2hJSmR4czYxTUE1amtjUm1tVlhCUDVmVmNzIiwicCI6MSwidiI6MSwidCI6WzRdfQ%3D%3D&to_place_id=eyJpIjoiQ2hJSngyVVJPd2VnajBjUk1TeVFWYnN0T1FVIiwicCI6MSwidiI6MSwidCI6WzRdfQ%3D%3D">link</a></td></tr>
+    <tr><td colspan="6" class="note">🏕 Campeggio: <a href="https://www.campingruetti.ch/navigation-en/prices/">Camping Rütti</a></td></tr>
+
+    <tr>
+      <td>18</td>
+      <td>Lauterbrunnen</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr><td colspan="6" class="note">🥾 Hikehike!</td></tr>
+
+    <tr>
+      <td>19</td>
+      <td>Lauterbrunnen → Lucern</td>
+      <td>08:31</td>
+      <td>10:55</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758700800000&ol=Lauterbrunnen%20(Switzerland)&ov=8507384&dl=Lucerne%20(Switzerland)&dv=8505000&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Lucern → Heidelberg</td>
+      <td>16:54</td>
+      <td>20:46</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758729600000&ol=Lucerne%20(Switzerland)&ov=8505000&dl=Heidelberg%20Hbf%20(Germany)&dv=8014021&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr><td colspan="6" class="note">🌍 Pernottamento a Heidelberg — Trustroots: <a href="https://www.trustroots.org/profile/annikameyer">annikameyer</a></td></tr>
+
+    <tr>
+      <td>20</td>
+      <td>Heidelberg</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr><td colspan="6" class="note">🏛 Attività: visita città</td></tr>
+
+    <tr>
+      <td>21</td>
+      <td>Heidelberg → Strasbourg</td>
+      <td>09:13</td>
+      <td>11:02</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758700800000&ol=Heidelberg%20Hbf%20(Germany)&ov=8014021&dl=Strasbourg%20(France)&dv=8721202&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Strasbourg</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr><td colspan="6" class="note">🏕 Campeggio: <a href="https://www.camping-strasbourg.com/en/">Camping Strasbourg</a> / Trustroots: <a href="https://www.trustroots.org/profile/lou12">lou12</a> / Wlcmtmygrdn: <a href="https://welcometomygarden.org/explore/garden/VjqM8ktALCeBh5HNphwPVj66i2C3">link</a></td></tr>
+
+    <tr>
+      <td>22</td>
+      <td>Strasbourg → Paris (+€12)</td>
+      <td>17:19</td>
+      <td>19:05</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758722400000&ol=Strasbourg%20(France)&ov=8721202&dl=Paris%20(France)&dv=8724855&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Paris</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr><td colspan="6" class="note">🏠 Trustroots: possibile “truztrutz?”</td></tr>
+
+    <tr>
+      <td>25</td>
+      <td>Paris → Lille (+€12)</td>
+      <td>10:13</td>
+      <td>11:19</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758708000000&ol=Paris%20(France)&ov=8724855&dl=Lille%20Flandres%20(France)&dv=8728600&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Lille → Bruges</td>
+      <td>18:09</td>
+      <td>19:44</td>
+      <td>Train</td>
+      <td><a href="https://www.interrail.eu/en/plan-your-trip/interrail-timetable?t=1758729600000&ol=Lille%20Flandres%20(France)&ov=8728600&dl=Bruges%20(Belgium)&dv=8891009&vl&vv&ar=false&tv=1&mct=1">link</a></td>
+    </tr>
+    <tr><td colspan="6" class="note">🏠 Pernottamento a Bruges — Trustroots possibile</td></tr>
+
+    <tr>
+      <td>27</td>
+      <td>Bruges → Bruxelles (€21)</td>
+      <td>09:58</td>
+      <td>10:52</td>
+      <td>Train</td>
+      <td><a href="https://www.blablacar.it/search?fn=Bruges%2C%20Belgio&tn=Bruxelles%2C%20Belgio&db=2025-09-27&seats=2&search_origin=SEARCH&from_place_id=eyJpIjoiQ2hJSkRVSWV3ZEJRdzBjUjkwMkR5RnJ6b2hvIiwicCI6MSwidiI6MSwidCI6WzRdfQ%3D%3D&to_place_id=eyJpIjoiQ2hJSloyakhjLTJrdzBjUnB3SnplR1k2aThFIiwicCI6MSwidiI6MSwidCI6WzRdfQ%3D%3D">link</a></td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Bruxelles → Turin</td>
+      <td>19:35</td>
+      <td>21:00</td>
+      <td>Plane</td>
+      <td>-</td>
+    </tr>
+
+  </table>
 </body>
 </html>
