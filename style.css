@@ -1,8 +1,9 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f6f9;
+  background: #EEEFE0;
   margin: 0;
   padding: 20px;
+  color: #333333;
 }
 
 header {
@@ -10,40 +11,50 @@ header {
   margin-bottom: 30px;
 }
 
-h1 {
-  margin-bottom: 10px;
+h1, h2 {
+  color: #819A91;
 }
 
-nav ul {
+.navbar {
+  background-color: #819A91;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.navbar ul {
   list-style: none;
+  margin: 0;
   padding: 0;
   text-align: center;
 }
 
-nav li {
-  margin: 10px 0;
+.navbar li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
-nav a {
+.navbar a {
   text-decoration: none;
-  color: #0077cc;
+  color: #EEEFE0;
   font-weight: bold;
+  font-size: 16px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.navbar a:hover {
+  color: #D1D8BE;
 }
 
 .city-container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background: #fff;
+  background: #A7C1A8;
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
   max-width: 800px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #819A91;
 }
 
 .city-info {
@@ -53,35 +64,4 @@ nav a:hover {
 
 .city-info h2 {
   margin-top: 0;
-}
-
-/* --- NAVBAR MODIFICATA --- */
-.navbar {
-  background-color: #0077cc;
-  padding: 10px 0;
-  margin-bottom: 30px;
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;            /* Flexbox per orizzontale */
-  justify-content: center;  /* Centra i link */
-  gap: 20px;                /* Spazio tra i link */
-}
-
-.navbar li {
-  margin: 0; /* rimuove margine verticale */
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.navbar a:hover {
-  text-decoration: underline;
 }
